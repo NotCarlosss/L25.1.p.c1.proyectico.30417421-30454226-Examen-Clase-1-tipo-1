@@ -8,7 +8,8 @@ export default class Cl_controlador {
         this.vista.reportarEstudiante(
             this.modelo.porcenAprobados(), 
             this.modelo.mejorEstudiante(), 
-            this.modelo.porcenChicasAprob()
+            this.modelo.porcenChicasAprob(),
+            this.modelo.estudianteMayorEdad()
         );
     
     }

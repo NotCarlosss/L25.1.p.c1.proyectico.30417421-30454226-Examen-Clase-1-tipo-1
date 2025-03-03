@@ -11,6 +11,8 @@ export default class Cl_vExamen {
         this.reqPorcenAprobados = document.getElementById('mainForm_reqPorcenAprobados');
         this.reqMejorEstudiante = document.getElementById('mainForm_reqMejorEstudiante');
         this.reqPorcenChicasAprob = document.getElementById('mainForm_reqPorcenChicasAprob');
+        this.reqEstudianteMayorEdadNombre = document.getElementById('mainForm_reqEstudianteMayorEdadNombre');
+        this.reqEstudianteMayorEdadEdad = document.getElementById('mainForm_reqEstudianteMayorEdadEdad');
         this.btAgregar.onclick = () => this.ocultarVistaExamen();
         this.vEstudiante.btConfirmar.onclick = () => {
             this.controlador.agregarEstudiante();
@@ -25,7 +27,8 @@ export default class Cl_vExamen {
             nombre: this.vEstudiante.nombre,
             cedula: this.vEstudiante.cedula,
             sexo: this.vEstudiante.sexo,
-            nota: this.vEstudiante.nota
+            nota: this.vEstudiante.nota,
+            edad: this.vEstudiante.edad
         });
         this.mostarVistaExamen();
         return this.mEstudiante;
@@ -38,17 +41,20 @@ export default class Cl_vExamen {
         this.vista.hidden = true;
         this.vEstudiante.mostrarVistaEstudiante();
     }
-    reportarEstudiante(porcenAprobados, mejorEstudiante, porcenChicasAprob) {
+    reportarEstudiante(porcenAprobados, mejorEstudiante, porcenChicasAprob, estudianteMayorEdad) {
         this.tabla.innerHTML += `
         <tr>
             <td>${this.mEstudiante.nombre}</td>
             <td>${this.mEstudiante.cedula}</td>
             <td>${this.mEstudiante.sexo}</td>
             <td>${this.mEstudiante.nota}</td>
+            <td>${this.mEstudiante.edad}</td>
         </tr>`;
         this.reqPorcenAprobados.innerHTML = porcenAprobados;
         this.reqMejorEstudiante.innerHTML = mejorEstudiante;
         this.reqPorcenChicasAprob.innerHTML = porcenChicasAprob;
+        this.reqEstudianteMayorEdadNombre.innerHTML = estudianteMayorEdad;
+        this.reqEstudianteMayorEdadEdad.innerHTML = this.mEstudiante.edad;
     }
 }
 

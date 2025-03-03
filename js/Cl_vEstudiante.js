@@ -5,6 +5,7 @@ export default class Cl_vEstudiante {
         this.Cedula = document.getElementById('estudianteForm_inCedula');
         this.Sexo = document.getElementById('estudianteForm_inSexo');
         this.Nota = document.getElementById('estudianteForm_inNota');
+        this.Edad = document.getElementById('estudianteForm_inEdad');
         this.btConfirmar = document.getElementById('EstudianteForm_btConfirmar');
     }
     get nombre () {
@@ -18,6 +19,9 @@ export default class Cl_vEstudiante {
     }
     get nota () {
         return +this.Nota.value;
+    }
+    get edad () {
+        return +this.Edad.value;
     }
     mostrarVistaEstudiante () {
         this.vista.hidden = false;       

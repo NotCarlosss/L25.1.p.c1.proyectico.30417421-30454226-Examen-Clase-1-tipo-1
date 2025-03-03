@@ -6,6 +6,8 @@ export default class Cl_mExamen{
         this.auxNombre = '';
         this.contChicas = 0;
         this.contChicasAprob = 0;
+        this.mayorEdad = 0;
+        this.auxNombreMayor = 0;
     }
     procesarEstudiante(estudiante){
         this.cantEstudiantes++;
@@ -22,6 +24,10 @@ export default class Cl_mExamen{
                 this.contChicasAprob++;
             }
         }
+        if(estudiante.edad > this.mayorEdad){
+            this.mayorEdad = estudiante.edad;
+            this.auxNombreMayor = estudiante.nombre;
+        }
     }
     porcenAprobados(){
         return (this.contEstudAprob / this.cantEstudiantes) * 100;
@@ -31,5 +37,8 @@ export default class Cl_mExamen{
     }
     porcenChicasAprob(){
         return (this.contChicasAprob / this.contChicas) * 100;
+    }
+    estudianteMayorEdad(){
+        return this.auxNombreMayor;
     }
 }
