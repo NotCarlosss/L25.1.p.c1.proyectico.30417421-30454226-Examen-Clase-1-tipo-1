@@ -1,14 +1,28 @@
 export default class Cl_vEstudiante {
-    get nombre() {
-        return prompt('Ingrese el nombre del estudiante');
+    constructor() {
+        this.vista = document.getElementById('estudianteForm');
+        this.Nombre = document.getElementById('estudianteForm_inNombre');
+        this.Cedula = document.getElementById('estudianteForm_inCedula');
+        this.Sexo = document.getElementById('estudianteForm_inSexo');
+        this.Nota = document.getElementById('estudianteForm_inNota');
+        this.btConfirmar = document.getElementById('EstudianteForm_btConfirmar');
     }
-    get cedula() {
-        return +prompt('Ingrese la cedula del estudiante');
+    get nombre () {
+        return this.Nombre.value;
     }
-    get sexo() {
-        return prompt('Ingrese el sexo del estudiante');
+    get cedula () {
+        return this.Cedula.value;
     }
-    get nota() {
-        return +prompt('Ingrese la nota del estudiante');
+    get sexo () {
+        return this.Sexo.value;
+    }
+    get nota () {
+        return +this.Nota.value;
+    }
+    mostrarVistaEstudiante () {
+        this.vista.hidden = false;       
+    }
+    ocualtarVistaEstudiante () {       
+        this.vista.hidden = true;       
     }
 }

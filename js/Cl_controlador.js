@@ -10,5 +10,6 @@ export default class Cl_controlador {
             this.modelo.mejorEstudiante(), 
             this.modelo.porcenChicasAprob()
         );
+    
     }
 }
